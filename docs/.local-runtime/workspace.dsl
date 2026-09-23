@@ -6,10 +6,9 @@
  * 2) System 1 stores data in its database.
  * 3) System 1 publishes events to queues consumed by System 2.
  * 4) System 3 pulls source data from System 1 API.
- * 5) System 2 processes/enriches data and sends output to System 4 via queue.
- * 6) System 3 packages source data and sends output to System 4 via queue.
- * 7) System 4 compares both inputs, creates one unified dataset, and stores it.
- * 8) System 5 reads the unified dataset through System 4 API for web display.
+ * 5) System 2 processes/enriches data and sends output to System 4.
+ * 6) System 4 compares System 2 output with System 3 pulled data.
+ * 7) System 4 sends curated results to System 5 for webpage display.
  */
 
 workspace "System 1-5 Data Pipeline" "A queue and API driven pipeline with enrichment, comparison, and web reporting." {
@@ -33,18 +32,16 @@ workspace "System 1-5 Data Pipeline" "A queue and API driven pipeline with enric
             outputQueue = container "Processed Queue" "Queues enriched results for System 4." "AWS SQS"
         }
 
-        system3 = softwareSystem "System 3 - Source Pull Service" "Pulls source records from System 1 API and forwards normalized source payloads." {
+        system3 = softwareSystem "System 3 - Source Pull Service" "Pulls source records from System 1 API for independent comparison input." {
             puller = container "API Pull Worker" "Periodically fetches source records from System 1 API." "Go"
             snapshotStore = container "Snapshot Store" "Stores fetched source snapshots." "PostgreSQL"
-            publisher = container "Source Publisher" "Builds source payload files and publishes them for comparison." "Go"
-            sourceQueue = container "Source Queue" "Queues source payload files for System 4." "AWS SQS"
+            publishApi = container "Comparison Feed API" "Exposes pulled snapshots to System 4." "Go"
         }
 
-        system4 = softwareSystem "System 4 - Comparison Hub" "Consumes two queue feeds, compares both datasets, and creates one final dataset." {
-            enrichedIngest = container "Enriched Ingestor" "Consumes enriched output files from System 2 queue." "Java"
-            sourceIngest = container "Source Ingestor" "Consumes source payload files from System 3 queue." "Java"
-            comparator = container "Comparison Service" "Matches and compares System 2 and System 3 payloads." "Java"
-            resultsDb = container "Unified Dataset DB" "Stores one consolidated dataset after comparison." "PostgreSQL"
+        system4 = softwareSystem "System 4 - Comparison Hub" "Compares enriched output with source snapshots and creates final decisions." {
+            ingest = container "Result Ingestor" "Consumes enriched output from System 2." "Java"
+            comparator = container "Comparison Service" "Compares System 2 results against System 3 source snapshots." "Java"
+            resultsDb = container "Comparison Results DB" "Stores comparison outcomes and status." "PostgreSQL"
             resultsApi = container "Results API" "Serves final comparison data to System 5." "Java"
         }
 
@@ -66,14 +63,12 @@ workspace "System 1-5 Data Pipeline" "A queue and API driven pipeline with enric
 
         system3.puller -> system1.api "Pull source records via API"
         system3.puller -> system3.snapshotStore "Persist pulled snapshots"
-        system3.publisher -> system3.snapshotStore "Read snapshots"
-        system3.publisher -> system3.sourceQueue "Publish source payload file"
+        system3.publishApi -> system3.snapshotStore "Read snapshot data"
 
-        system2.outputQueue -> system4.enrichedIngest "Deliver enriched output file"
-        system3.sourceQueue -> system4.sourceIngest "Deliver source payload file"
-        system4.enrichedIngest -> system4.comparator "Forward enriched payload"
-        system4.sourceIngest -> system4.comparator "Forward source payload"
-        system4.comparator -> system4.resultsDb "Store unified dataset"
+        system2.outputQueue -> system4.ingest "Deliver enriched output"
+        system4.ingest -> system4.comparator "Forward enriched payload"
+        system4.comparator -> system3.publishApi "Fetch source snapshots for comparison"
+        system4.comparator -> system4.resultsDb "Store comparison outcomes"
         system4.resultsApi -> system4.resultsDb "Read final outcomes"
 
         system5.web -> system5.backend "Load report page data"
@@ -92,25 +87,22 @@ workspace "System 1-5 Data Pipeline" "A queue and API driven pipeline with enric
             autoLayout lr
         }
 
-        dynamic system4 "endToEndFlow" "End-to-end flow with dual queue delivery into comparison" {
+        dynamic system4 "endToEndFlow" "End-to-end processing and comparison flow" {
             user -> system1.app "1. Enter details"
             system1.app -> system1.api "2. Submit"
             system1.api -> system1.db "3. Save in DB"
             system1.api -> system1.outboundQueue "4. Publish event"
             system1.outboundQueue -> system2.consumer "5. Queue delivery"
             system2.consumer -> system2.engine "6. Process"
-            system2.engine -> system2.outputQueue "7. Publish enriched file"
+            system2.engine -> system2.outputQueue "7. Publish enriched output"
             system3.puller -> system1.api "8. Pull source data via API"
             system3.puller -> system3.snapshotStore "9. Store snapshot"
-            system3.publisher -> system3.snapshotStore "10. Read snapshot"
-            system3.publisher -> system3.sourceQueue "11. Publish source file"
-            system2.outputQueue -> system4.enrichedIngest "12. Deliver enriched file"
-            system3.sourceQueue -> system4.sourceIngest "13. Deliver source file"
-            system4.enrichedIngest -> system4.comparator "14. Send enriched payload"
-            system4.sourceIngest -> system4.comparator "15. Send source payload"
-            system4.comparator -> system4.resultsDb "16. Save unified dataset"
-            system5.web -> system5.backend "17. Request report"
-            system5.backend -> system4.resultsApi "18. Fetch unified dataset"
+            system2.outputQueue -> system4.ingest "10. Send to System 4"
+            system4.ingest -> system4.comparator "11. Compare prep"
+            system4.comparator -> system3.publishApi "12. Pull source snapshot"
+            system4.comparator -> system4.resultsDb "13. Store comparison result"
+            system5.web -> system5.backend "14. Request report"
+            system5.backend -> system4.resultsApi "15. Fetch results"
             autoLayout lr
         }
 
