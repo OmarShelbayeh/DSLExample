@@ -3,7 +3,7 @@
   "description" : "A queue and API driven pipeline with enrichment, comparison, and web reporting.",
   "documentation" : { },
   "id" : 1,
-  "lastModifiedDate" : "2026-09-23T16:29:06Z",
+  "lastModifiedDate" : "2026-09-23T16:52:26Z",
   "model" : {
     "people" : [ {
       "description" : "Enters records and reviews final results on a web page.",
@@ -15,26 +15,26 @@
       "relationships" : [ {
         "description" : "Enters details",
         "destinationId" : "3",
-        "id" : "23",
+        "id" : "25",
         "sourceId" : "1",
         "tags" : "Relationship"
       }, {
         "description" : "Enters details",
         "destinationId" : "2",
-        "id" : "24",
-        "linkedRelationshipId" : "23",
+        "id" : "26",
+        "linkedRelationshipId" : "25",
         "sourceId" : "1"
       }, {
         "description" : "Views processed comparison results",
-        "destinationId" : "21",
-        "id" : "25",
+        "destinationId" : "23",
+        "id" : "27",
         "sourceId" : "1",
         "tags" : "Relationship"
       }, {
         "description" : "Views processed comparison results",
-        "destinationId" : "20",
-        "id" : "26",
-        "linkedRelationshipId" : "25",
+        "destinationId" : "22",
+        "id" : "28",
+        "linkedRelationshipId" : "27",
         "sourceId" : "1"
       } ],
       "tags" : "Element,Person,External"
@@ -51,7 +51,7 @@
         "relationships" : [ {
           "description" : "Submit details",
           "destinationId" : "4",
-          "id" : "27",
+          "id" : "29",
           "sourceId" : "3",
           "tags" : "Relationship"
         } ],
@@ -68,13 +68,13 @@
         "relationships" : [ {
           "description" : "Create/update records",
           "destinationId" : "5",
-          "id" : "28",
+          "id" : "30",
           "sourceId" : "4",
           "tags" : "Relationship"
         }, {
           "description" : "Publish record-created/updated event",
           "destinationId" : "6",
-          "id" : "29",
+          "id" : "31",
           "sourceId" : "4",
           "tags" : "Relationship"
         } ],
@@ -101,14 +101,14 @@
         "relationships" : [ {
           "description" : "Deliver record event",
           "destinationId" : "8",
-          "id" : "30",
+          "id" : "32",
           "sourceId" : "6",
           "tags" : "Relationship"
         }, {
           "description" : "Deliver record event",
           "destinationId" : "7",
-          "id" : "31",
-          "linkedRelationshipId" : "30",
+          "id" : "33",
+          "linkedRelationshipId" : "32",
           "sourceId" : "6"
         } ],
         "tags" : "Element,Container",
@@ -124,14 +124,14 @@
       "relationships" : [ {
         "description" : "Deliver record event",
         "destinationId" : "8",
-        "id" : "32",
-        "linkedRelationshipId" : "30",
+        "id" : "34",
+        "linkedRelationshipId" : "32",
         "sourceId" : "2"
       }, {
         "description" : "Deliver record event",
         "destinationId" : "7",
-        "id" : "33",
-        "linkedRelationshipId" : "30",
+        "id" : "35",
+        "linkedRelationshipId" : "32",
         "sourceId" : "2"
       } ],
       "tags" : "Element,Software System"
@@ -147,7 +147,7 @@
         "relationships" : [ {
           "description" : "Pass payload for processing",
           "destinationId" : "9",
-          "id" : "34",
+          "id" : "36",
           "sourceId" : "8",
           "tags" : "Relationship"
         } ],
@@ -164,7 +164,7 @@
         "relationships" : [ {
           "description" : "Publish enriched result",
           "destinationId" : "10",
-          "id" : "35",
+          "id" : "37",
           "sourceId" : "9",
           "tags" : "Relationship"
         } ],
@@ -179,16 +179,16 @@
           "structurizr.dsl.identifier" : "system2.outputQueue"
         },
         "relationships" : [ {
-          "description" : "Deliver enriched output",
-          "destinationId" : "16",
-          "id" : "42",
+          "description" : "Deliver enriched output file",
+          "destinationId" : "17",
+          "id" : "45",
           "sourceId" : "10",
           "tags" : "Relationship"
         }, {
-          "description" : "Deliver enriched output",
-          "destinationId" : "15",
-          "id" : "43",
-          "linkedRelationshipId" : "42",
+          "description" : "Deliver enriched output file",
+          "destinationId" : "16",
+          "id" : "46",
+          "linkedRelationshipId" : "45",
           "sourceId" : "10"
         } ],
         "tags" : "Element,Container",
@@ -202,16 +202,16 @@
         "structurizr.dsl.identifier" : "system2"
       },
       "relationships" : [ {
-        "description" : "Deliver enriched output",
-        "destinationId" : "16",
-        "id" : "44",
-        "linkedRelationshipId" : "42",
+        "description" : "Deliver enriched output file",
+        "destinationId" : "17",
+        "id" : "47",
+        "linkedRelationshipId" : "45",
         "sourceId" : "7"
       }, {
-        "description" : "Deliver enriched output",
-        "destinationId" : "15",
-        "id" : "45",
-        "linkedRelationshipId" : "42",
+        "description" : "Deliver enriched output file",
+        "destinationId" : "16",
+        "id" : "48",
+        "linkedRelationshipId" : "45",
         "sourceId" : "7"
       } ],
       "tags" : "Element,Software System"
@@ -227,19 +227,19 @@
         "relationships" : [ {
           "description" : "Pull source records via API",
           "destinationId" : "4",
-          "id" : "36",
+          "id" : "38",
           "sourceId" : "12",
           "tags" : "Relationship"
         }, {
           "description" : "Pull source records via API",
           "destinationId" : "2",
-          "id" : "37",
-          "linkedRelationshipId" : "36",
+          "id" : "39",
+          "linkedRelationshipId" : "38",
           "sourceId" : "12"
         }, {
           "description" : "Persist pulled snapshots",
           "destinationId" : "13",
-          "id" : "40",
+          "id" : "42",
           "sourceId" : "12",
           "tags" : "Relationship"
         } ],
@@ -256,24 +256,53 @@
         "tags" : "Element,Container",
         "technology" : "PostgreSQL"
       }, {
-        "description" : "Exposes pulled snapshots to System 4.",
+        "description" : "Builds source payload files and publishes them for comparison.",
         "documentation" : { },
         "id" : "14",
-        "name" : "Comparison Feed API",
+        "name" : "Source Publisher",
         "properties" : {
-          "structurizr.dsl.identifier" : "system3.publishApi"
+          "structurizr.dsl.identifier" : "system3.publisher"
         },
         "relationships" : [ {
-          "description" : "Read snapshot data",
+          "description" : "Read snapshots",
           "destinationId" : "13",
-          "id" : "41",
+          "id" : "43",
+          "sourceId" : "14",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Publish source payload file",
+          "destinationId" : "15",
+          "id" : "44",
           "sourceId" : "14",
           "tags" : "Relationship"
         } ],
         "tags" : "Element,Container",
         "technology" : "Go"
+      }, {
+        "description" : "Queues source payload files for System 4.",
+        "documentation" : { },
+        "id" : "15",
+        "name" : "Source Queue",
+        "properties" : {
+          "structurizr.dsl.identifier" : "system3.sourceQueue"
+        },
+        "relationships" : [ {
+          "description" : "Deliver source payload file",
+          "destinationId" : "18",
+          "id" : "49",
+          "sourceId" : "15",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Deliver source payload file",
+          "destinationId" : "16",
+          "id" : "50",
+          "linkedRelationshipId" : "49",
+          "sourceId" : "15"
+        } ],
+        "tags" : "Element,Container",
+        "technology" : "AWS SQS"
       } ],
-      "description" : "Pulls source records from System 1 API for independent comparison input.",
+      "description" : "Pulls source records from System 1 API and forwards normalized source payloads.",
       "documentation" : { },
       "id" : "11",
       "name" : "System 3 - Source Pull Service",
@@ -283,69 +312,86 @@
       "relationships" : [ {
         "description" : "Pull source records via API",
         "destinationId" : "4",
-        "id" : "38",
-        "linkedRelationshipId" : "36",
+        "id" : "40",
+        "linkedRelationshipId" : "38",
         "sourceId" : "11"
       }, {
         "description" : "Pull source records via API",
         "destinationId" : "2",
-        "id" : "39",
-        "linkedRelationshipId" : "36",
+        "id" : "41",
+        "linkedRelationshipId" : "38",
+        "sourceId" : "11"
+      }, {
+        "description" : "Deliver source payload file",
+        "destinationId" : "18",
+        "id" : "51",
+        "linkedRelationshipId" : "49",
+        "sourceId" : "11"
+      }, {
+        "description" : "Deliver source payload file",
+        "destinationId" : "16",
+        "id" : "52",
+        "linkedRelationshipId" : "49",
         "sourceId" : "11"
       } ],
       "tags" : "Element,Software System"
     }, {
       "containers" : [ {
-        "description" : "Consumes enriched output from System 2.",
+        "description" : "Consumes enriched output files from System 2 queue.",
         "documentation" : { },
-        "id" : "16",
-        "name" : "Result Ingestor",
+        "id" : "17",
+        "name" : "Enriched Ingestor",
         "properties" : {
-          "structurizr.dsl.identifier" : "system4.ingest"
+          "structurizr.dsl.identifier" : "system4.enrichedIngest"
         },
         "relationships" : [ {
           "description" : "Forward enriched payload",
-          "destinationId" : "17",
-          "id" : "46",
-          "sourceId" : "16",
+          "destinationId" : "19",
+          "id" : "53",
+          "sourceId" : "17",
           "tags" : "Relationship"
         } ],
         "tags" : "Element,Container",
         "technology" : "Java"
       }, {
-        "description" : "Compares System 2 results against System 3 source snapshots.",
+        "description" : "Consumes source payload files from System 3 queue.",
         "documentation" : { },
-        "id" : "17",
+        "id" : "18",
+        "name" : "Source Ingestor",
+        "properties" : {
+          "structurizr.dsl.identifier" : "system4.sourceIngest"
+        },
+        "relationships" : [ {
+          "description" : "Forward source payload",
+          "destinationId" : "19",
+          "id" : "54",
+          "sourceId" : "18",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container",
+        "technology" : "Java"
+      }, {
+        "description" : "Matches and compares System 2 and System 3 payloads.",
+        "documentation" : { },
+        "id" : "19",
         "name" : "Comparison Service",
         "properties" : {
           "structurizr.dsl.identifier" : "system4.comparator"
         },
         "relationships" : [ {
-          "description" : "Fetch source snapshots for comparison",
-          "destinationId" : "14",
-          "id" : "47",
-          "sourceId" : "17",
-          "tags" : "Relationship"
-        }, {
-          "description" : "Fetch source snapshots for comparison",
-          "destinationId" : "11",
-          "id" : "48",
-          "linkedRelationshipId" : "47",
-          "sourceId" : "17"
-        }, {
-          "description" : "Store comparison outcomes",
-          "destinationId" : "18",
-          "id" : "51",
-          "sourceId" : "17",
+          "description" : "Store unified dataset",
+          "destinationId" : "20",
+          "id" : "55",
+          "sourceId" : "19",
           "tags" : "Relationship"
         } ],
         "tags" : "Element,Container",
         "technology" : "Java"
       }, {
-        "description" : "Stores comparison outcomes and status.",
+        "description" : "Stores one consolidated dataset after comparison.",
         "documentation" : { },
-        "id" : "18",
-        "name" : "Comparison Results DB",
+        "id" : "20",
+        "name" : "Unified Dataset DB",
         "properties" : {
           "structurizr.dsl.identifier" : "system4.resultsDb"
         },
@@ -354,56 +400,43 @@
       }, {
         "description" : "Serves final comparison data to System 5.",
         "documentation" : { },
-        "id" : "19",
+        "id" : "21",
         "name" : "Results API",
         "properties" : {
           "structurizr.dsl.identifier" : "system4.resultsApi"
         },
         "relationships" : [ {
           "description" : "Read final outcomes",
-          "destinationId" : "18",
-          "id" : "52",
-          "sourceId" : "19",
+          "destinationId" : "20",
+          "id" : "56",
+          "sourceId" : "21",
           "tags" : "Relationship"
         } ],
         "tags" : "Element,Container",
         "technology" : "Java"
       } ],
-      "description" : "Compares enriched output with source snapshots and creates final decisions.",
+      "description" : "Consumes two queue feeds, compares both datasets, and creates one final dataset.",
       "documentation" : { },
-      "id" : "15",
+      "id" : "16",
       "name" : "System 4 - Comparison Hub",
       "properties" : {
         "structurizr.dsl.identifier" : "system4"
       },
-      "relationships" : [ {
-        "description" : "Fetch source snapshots for comparison",
-        "destinationId" : "14",
-        "id" : "49",
-        "linkedRelationshipId" : "47",
-        "sourceId" : "15"
-      }, {
-        "description" : "Fetch source snapshots for comparison",
-        "destinationId" : "11",
-        "id" : "50",
-        "linkedRelationshipId" : "47",
-        "sourceId" : "15"
-      } ],
       "tags" : "Element,Software System"
     }, {
       "containers" : [ {
         "description" : "Presents final outcomes and drill-down details.",
         "documentation" : { },
-        "id" : "21",
+        "id" : "23",
         "name" : "Reporting Web App",
         "properties" : {
           "structurizr.dsl.identifier" : "system5.web"
         },
         "relationships" : [ {
           "description" : "Load report page data",
-          "destinationId" : "22",
-          "id" : "53",
-          "sourceId" : "21",
+          "destinationId" : "24",
+          "id" : "57",
+          "sourceId" : "23",
           "tags" : "Relationship"
         } ],
         "tags" : "Element,Container",
@@ -411,54 +444,54 @@
       }, {
         "description" : "Fetches final results from System 4 and shapes UI responses.",
         "documentation" : { },
-        "id" : "22",
+        "id" : "24",
         "name" : "Reporting Backend",
         "properties" : {
           "structurizr.dsl.identifier" : "system5.backend"
         },
         "relationships" : [ {
           "description" : "Fetch final comparison results",
-          "destinationId" : "19",
-          "id" : "54",
-          "sourceId" : "22",
+          "destinationId" : "21",
+          "id" : "58",
+          "sourceId" : "24",
           "tags" : "Relationship"
         }, {
           "description" : "Fetch final comparison results",
-          "destinationId" : "15",
-          "id" : "55",
-          "linkedRelationshipId" : "54",
-          "sourceId" : "22"
+          "destinationId" : "16",
+          "id" : "59",
+          "linkedRelationshipId" : "58",
+          "sourceId" : "24"
         } ],
         "tags" : "Element,Container",
         "technology" : "Node.js"
       } ],
       "description" : "Displays comparison outcomes in a web page.",
       "documentation" : { },
-      "id" : "20",
+      "id" : "22",
       "name" : "System 5 - Web Reporting",
       "properties" : {
         "structurizr.dsl.identifier" : "system5"
       },
       "relationships" : [ {
         "description" : "Fetch final comparison results",
-        "destinationId" : "19",
-        "id" : "56",
-        "linkedRelationshipId" : "54",
-        "sourceId" : "20"
+        "destinationId" : "21",
+        "id" : "60",
+        "linkedRelationshipId" : "58",
+        "sourceId" : "22"
       }, {
         "description" : "Fetch final comparison results",
-        "destinationId" : "15",
-        "id" : "57",
-        "linkedRelationshipId" : "54",
-        "sourceId" : "20"
+        "destinationId" : "16",
+        "id" : "61",
+        "linkedRelationshipId" : "58",
+        "sourceId" : "22"
       } ],
       "tags" : "Element,Software System"
     } ]
   },
   "name" : "System 1-5 Data Pipeline",
   "properties" : {
-    "structurizr.inspection.error" : "47",
-    "structurizr.dsl" : "LyoKICogRXhhbXBsZTogTXVsdGktU3lzdGVtIERhdGEgUGlwZWxpbmUgKFN5c3RlbXMgMS01KQogKgogKiBGbG93OgogKiAxKSBVc2VycyBlbnRlciBkZXRhaWxzIGluIFN5c3RlbSAxIGFwcC4KICogMikgU3lzdGVtIDEgc3RvcmVzIGRhdGEgaW4gaXRzIGRhdGFiYXNlLgogKiAzKSBTeXN0ZW0gMSBwdWJsaXNoZXMgZXZlbnRzIHRvIHF1ZXVlcyBjb25zdW1lZCBieSBTeXN0ZW0gMi4KICogNCkgU3lzdGVtIDMgcHVsbHMgc291cmNlIGRhdGEgZnJvbSBTeXN0ZW0gMSBBUEkuCiAqIDUpIFN5c3RlbSAyIHByb2Nlc3Nlcy9lbnJpY2hlcyBkYXRhIGFuZCBzZW5kcyBvdXRwdXQgdG8gU3lzdGVtIDQuCiAqIDYpIFN5c3RlbSA0IGNvbXBhcmVzIFN5c3RlbSAyIG91dHB1dCB3aXRoIFN5c3RlbSAzIHB1bGxlZCBkYXRhLgogKiA3KSBTeXN0ZW0gNCBzZW5kcyBjdXJhdGVkIHJlc3VsdHMgdG8gU3lzdGVtIDUgZm9yIHdlYnBhZ2UgZGlzcGxheS4KICovCgp3b3Jrc3BhY2UgIlN5c3RlbSAxLTUgRGF0YSBQaXBlbGluZSIgIkEgcXVldWUgYW5kIEFQSSBkcml2ZW4gcGlwZWxpbmUgd2l0aCBlbnJpY2htZW50LCBjb21wYXJpc29uLCBhbmQgd2ViIHJlcG9ydGluZy4iIHsKCiAgICAhaWRlbnRpZmllcnMgaGllcmFyY2hpY2FsCgogICAgbW9kZWwgewoKICAgICAgICB1c2VyID0gcGVyc29uICJCdXNpbmVzcyBVc2VyIiAiRW50ZXJzIHJlY29yZHMgYW5kIHJldmlld3MgZmluYWwgcmVzdWx0cyBvbiBhIHdlYiBwYWdlLiIgIkV4dGVybmFsIgoKICAgICAgICBzeXN0ZW0xID0gc29mdHdhcmVTeXN0ZW0gIlN5c3RlbSAxIC0gRGF0YSBDYXB0dXJlIiAiQ2FwdHVyZXMgdXNlci1lbnRlcmVkIHJlY29yZHMgYW5kIGV4cG9zZXMgc291cmNlIGRhdGEgdmlhIEFQSS4iIHsKICAgICAgICAgICAgYXBwID0gY29udGFpbmVyICJEYXRhIEVudHJ5IEFwcCIgIldlYiBhcHAgdXNlZCBieSB1c2VycyB0byBzdWJtaXQgZGV0YWlscy4iICJSZWFjdCIKICAgICAgICAgICAgYXBpID0gY29udGFpbmVyICJTeXN0ZW0gMSBBUEkiICJWYWxpZGF0ZXMgaW5wdXQsIHN0b3JlcyByZWNvcmRzLCBhbmQgc2VydmVzIGRhdGEgdG8gb3RoZXIgc3lzdGVtcy4iICJOb2RlLmpzIgogICAgICAgICAgICBkYiA9IGNvbnRhaW5lciAiU3lzdGVtIDEgRGF0YWJhc2UiICJQcmltYXJ5IHNvdXJjZS1vZi10cnV0aCBmb3Igc3VibWl0dGVkIHJlY29yZHMuIiAiUG9zdGdyZVNRTCIKICAgICAgICAgICAgb3V0Ym91bmRRdWV1ZSA9IGNvbnRhaW5lciAiT3V0Ym91bmQgUXVldWUiICJQdWJsaXNoZXMgbmV3bHkgY3JlYXRlZCBhbmQgdXBkYXRlZCByZWNvcmRzLiIgIkFXUyBTUVMiCiAgICAgICAgfQoKICAgICAgICBzeXN0ZW0yID0gc29mdHdhcmVTeXN0ZW0gIlN5c3RlbSAyIC0gRW5yaWNobWVudCBFbmdpbmUiICJDb25zdW1lcyBxdWV1ZSBldmVudHMsIGFwcGxpZXMgYnVzaW5lc3MgbG9naWMsIGFuZCBlbWl0cyBlbnJpY2hlZCBkYXRhLiIgewogICAgICAgICAgICBjb25zdW1lciA9IGNvbnRhaW5lciAiUXVldWUgQ29uc3VtZXIiICJDb25zdW1lcyByZWNvcmQgZXZlbnRzIGZyb20gU3lzdGVtIDEgcXVldWUuIiAiUHl0aG9uIgogICAgICAgICAgICBlbmdpbmUgPSBjb250YWluZXIgIlByb2Nlc3NpbmcgRW5naW5lIiAiQXBwbGllcyB0cmFuc2Zvcm1hdGlvbnMsIHNjb3JpbmcsIGFuZCBlbnJpY2htZW50IHJ1bGVzLiIgIlB5dGhvbiIKICAgICAgICAgICAgb3V0cHV0UXVldWUgPSBjb250YWluZXIgIlByb2Nlc3NlZCBRdWV1ZSIgIlF1ZXVlcyBlbnJpY2hlZCByZXN1bHRzIGZvciBTeXN0ZW0gNC4iICJBV1MgU1FTIgogICAgICAgIH0KCiAgICAgICAgc3lzdGVtMyA9IHNvZnR3YXJlU3lzdGVtICJTeXN0ZW0gMyAtIFNvdXJjZSBQdWxsIFNlcnZpY2UiICJQdWxscyBzb3VyY2UgcmVjb3JkcyBmcm9tIFN5c3RlbSAxIEFQSSBmb3IgaW5kZXBlbmRlbnQgY29tcGFyaXNvbiBpbnB1dC4iIHsKICAgICAgICAgICAgcHVsbGVyID0gY29udGFpbmVyICJBUEkgUHVsbCBXb3JrZXIiICJQZXJpb2RpY2FsbHkgZmV0Y2hlcyBzb3VyY2UgcmVjb3JkcyBmcm9tIFN5c3RlbSAxIEFQSS4iICJHbyIKICAgICAgICAgICAgc25hcHNob3RTdG9yZSA9IGNvbnRhaW5lciAiU25hcHNob3QgU3RvcmUiICJTdG9yZXMgZmV0Y2hlZCBzb3VyY2Ugc25hcHNob3RzLiIgIlBvc3RncmVTUUwiCiAgICAgICAgICAgIHB1Ymxpc2hBcGkgPSBjb250YWluZXIgIkNvbXBhcmlzb24gRmVlZCBBUEkiICJFeHBvc2VzIHB1bGxlZCBzbmFwc2hvdHMgdG8gU3lzdGVtIDQuIiAiR28iCiAgICAgICAgfQoKICAgICAgICBzeXN0ZW00ID0gc29mdHdhcmVTeXN0ZW0gIlN5c3RlbSA0IC0gQ29tcGFyaXNvbiBIdWIiICJDb21wYXJlcyBlbnJpY2hlZCBvdXRwdXQgd2l0aCBzb3VyY2Ugc25hcHNob3RzIGFuZCBjcmVhdGVzIGZpbmFsIGRlY2lzaW9ucy4iIHsKICAgICAgICAgICAgaW5nZXN0ID0gY29udGFpbmVyICJSZXN1bHQgSW5nZXN0b3IiICJDb25zdW1lcyBlbnJpY2hlZCBvdXRwdXQgZnJvbSBTeXN0ZW0gMi4iICJKYXZhIgogICAgICAgICAgICBjb21wYXJhdG9yID0gY29udGFpbmVyICJDb21wYXJpc29uIFNlcnZpY2UiICJDb21wYXJlcyBTeXN0ZW0gMiByZXN1bHRzIGFnYWluc3QgU3lzdGVtIDMgc291cmNlIHNuYXBzaG90cy4iICJKYXZhIgogICAgICAgICAgICByZXN1bHRzRGIgPSBjb250YWluZXIgIkNvbXBhcmlzb24gUmVzdWx0cyBEQiIgIlN0b3JlcyBjb21wYXJpc29uIG91dGNvbWVzIGFuZCBzdGF0dXMuIiAiUG9zdGdyZVNRTCIKICAgICAgICAgICAgcmVzdWx0c0FwaSA9IGNvbnRhaW5lciAiUmVzdWx0cyBBUEkiICJTZXJ2ZXMgZmluYWwgY29tcGFyaXNvbiBkYXRhIHRvIFN5c3RlbSA1LiIgIkphdmEiCiAgICAgICAgfQoKICAgICAgICBzeXN0ZW01ID0gc29mdHdhcmVTeXN0ZW0gIlN5c3RlbSA1IC0gV2ViIFJlcG9ydGluZyIgIkRpc3BsYXlzIGNvbXBhcmlzb24gb3V0Y29tZXMgaW4gYSB3ZWIgcGFnZS4iIHsKICAgICAgICAgICAgd2ViID0gY29udGFpbmVyICJSZXBvcnRpbmcgV2ViIEFwcCIgIlByZXNlbnRzIGZpbmFsIG91dGNvbWVzIGFuZCBkcmlsbC1kb3duIGRldGFpbHMuIiAiTmV4dC5qcyIKICAgICAgICAgICAgYmFja2VuZCA9IGNvbnRhaW5lciAiUmVwb3J0aW5nIEJhY2tlbmQiICJGZXRjaGVzIGZpbmFsIHJlc3VsdHMgZnJvbSBTeXN0ZW0gNCBhbmQgc2hhcGVzIFVJIHJlc3BvbnNlcy4iICJOb2RlLmpzIgogICAgICAgIH0KCiAgICAgICAgdXNlciAtPiBzeXN0ZW0xLmFwcCAiRW50ZXJzIGRldGFpbHMiCiAgICAgICAgdXNlciAtPiBzeXN0ZW01LndlYiAiVmlld3MgcHJvY2Vzc2VkIGNvbXBhcmlzb24gcmVzdWx0cyIKCiAgICAgICAgc3lzdGVtMS5hcHAgLT4gc3lzdGVtMS5hcGkgIlN1Ym1pdCBkZXRhaWxzIgogICAgICAgIHN5c3RlbTEuYXBpIC0+IHN5c3RlbTEuZGIgIkNyZWF0ZS91cGRhdGUgcmVjb3JkcyIKICAgICAgICBzeXN0ZW0xLmFwaSAtPiBzeXN0ZW0xLm91dGJvdW5kUXVldWUgIlB1Ymxpc2ggcmVjb3JkLWNyZWF0ZWQvdXBkYXRlZCBldmVudCIKCiAgICAgICAgc3lzdGVtMS5vdXRib3VuZFF1ZXVlIC0+IHN5c3RlbTIuY29uc3VtZXIgIkRlbGl2ZXIgcmVjb3JkIGV2ZW50IgogICAgICAgIHN5c3RlbTIuY29uc3VtZXIgLT4gc3lzdGVtMi5lbmdpbmUgIlBhc3MgcGF5bG9hZCBmb3IgcHJvY2Vzc2luZyIKICAgICAgICBzeXN0ZW0yLmVuZ2luZSAtPiBzeXN0ZW0yLm91dHB1dFF1ZXVlICJQdWJsaXNoIGVucmljaGVkIHJlc3VsdCIKCiAgICAgICAgc3lzdGVtMy5wdWxsZXIgLT4gc3lzdGVtMS5hcGkgIlB1bGwgc291cmNlIHJlY29yZHMgdmlhIEFQSSIKICAgICAgICBzeXN0ZW0zLnB1bGxlciAtPiBzeXN0ZW0zLnNuYXBzaG90U3RvcmUgIlBlcnNpc3QgcHVsbGVkIHNuYXBzaG90cyIKICAgICAgICBzeXN0ZW0zLnB1Ymxpc2hBcGkgLT4gc3lzdGVtMy5zbmFwc2hvdFN0b3JlICJSZWFkIHNuYXBzaG90IGRhdGEiCgogICAgICAgIHN5c3RlbTIub3V0cHV0UXVldWUgLT4gc3lzdGVtNC5pbmdlc3QgIkRlbGl2ZXIgZW5yaWNoZWQgb3V0cHV0IgogICAgICAgIHN5c3RlbTQuaW5nZXN0IC0+IHN5c3RlbTQuY29tcGFyYXRvciAiRm9yd2FyZCBlbnJpY2hlZCBwYXlsb2FkIgogICAgICAgIHN5c3RlbTQuY29tcGFyYXRvciAtPiBzeXN0ZW0zLnB1Ymxpc2hBcGkgIkZldGNoIHNvdXJjZSBzbmFwc2hvdHMgZm9yIGNvbXBhcmlzb24iCiAgICAgICAgc3lzdGVtNC5jb21wYXJhdG9yIC0+IHN5c3RlbTQucmVzdWx0c0RiICJTdG9yZSBjb21wYXJpc29uIG91dGNvbWVzIgogICAgICAgIHN5c3RlbTQucmVzdWx0c0FwaSAtPiBzeXN0ZW00LnJlc3VsdHNEYiAiUmVhZCBmaW5hbCBvdXRjb21lcyIKCiAgICAgICAgc3lzdGVtNS53ZWIgLT4gc3lzdGVtNS5iYWNrZW5kICJMb2FkIHJlcG9ydCBwYWdlIGRhdGEiCiAgICAgICAgc3lzdGVtNS5iYWNrZW5kIC0+IHN5c3RlbTQucmVzdWx0c0FwaSAiRmV0Y2ggZmluYWwgY29tcGFyaXNvbiByZXN1bHRzIgogICAgfQoKICAgIHZpZXdzIHsKCiAgICAgICAgc3lzdGVtTGFuZHNjYXBlICJsYW5kc2NhcGUiICJTeXN0ZW0gMSB0byA1IGhpZ2gtbGV2ZWwgYXJjaGl0ZWN0dXJlIiB7CiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgICAgICBhdXRvTGF5b3V0IGxyCiAgICAgICAgfQoKICAgICAgICBjb250YWluZXIgc3lzdGVtMSAic3lzdGVtMS1jb250YWluZXJzIiAiU3lzdGVtIDEgY29udGFpbmVycyIgewogICAgICAgICAgICBpbmNsdWRlICoKICAgICAgICAgICAgYXV0b0xheW91dCBscgogICAgICAgIH0KCiAgICAgICAgZHluYW1pYyBzeXN0ZW00ICJlbmRUb0VuZEZsb3ciICJFbmQtdG8tZW5kIHByb2Nlc3NpbmcgYW5kIGNvbXBhcmlzb24gZmxvdyIgewogICAgICAgICAgICB1c2VyIC0+IHN5c3RlbTEuYXBwICIxLiBFbnRlciBkZXRhaWxzIgogICAgICAgICAgICBzeXN0ZW0xLmFwcCAtPiBzeXN0ZW0xLmFwaSAiMi4gU3VibWl0IgogICAgICAgICAgICBzeXN0ZW0xLmFwaSAtPiBzeXN0ZW0xLmRiICIzLiBTYXZlIGluIERCIgogICAgICAgICAgICBzeXN0ZW0xLmFwaSAtPiBzeXN0ZW0xLm91dGJvdW5kUXVldWUgIjQuIFB1Ymxpc2ggZXZlbnQiCiAgICAgICAgICAgIHN5c3RlbTEub3V0Ym91bmRRdWV1ZSAtPiBzeXN0ZW0yLmNvbnN1bWVyICI1LiBRdWV1ZSBkZWxpdmVyeSIKICAgICAgICAgICAgc3lzdGVtMi5jb25zdW1lciAtPiBzeXN0ZW0yLmVuZ2luZSAiNi4gUHJvY2VzcyIKICAgICAgICAgICAgc3lzdGVtMi5lbmdpbmUgLT4gc3lzdGVtMi5vdXRwdXRRdWV1ZSAiNy4gUHVibGlzaCBlbnJpY2hlZCBvdXRwdXQiCiAgICAgICAgICAgIHN5c3RlbTMucHVsbGVyIC0+IHN5c3RlbTEuYXBpICI4LiBQdWxsIHNvdXJjZSBkYXRhIHZpYSBBUEkiCiAgICAgICAgICAgIHN5c3RlbTMucHVsbGVyIC0+IHN5c3RlbTMuc25hcHNob3RTdG9yZSAiOS4gU3RvcmUgc25hcHNob3QiCiAgICAgICAgICAgIHN5c3RlbTIub3V0cHV0UXVldWUgLT4gc3lzdGVtNC5pbmdlc3QgIjEwLiBTZW5kIHRvIFN5c3RlbSA0IgogICAgICAgICAgICBzeXN0ZW00LmluZ2VzdCAtPiBzeXN0ZW00LmNvbXBhcmF0b3IgIjExLiBDb21wYXJlIHByZXAiCiAgICAgICAgICAgIHN5c3RlbTQuY29tcGFyYXRvciAtPiBzeXN0ZW0zLnB1Ymxpc2hBcGkgIjEyLiBQdWxsIHNvdXJjZSBzbmFwc2hvdCIKICAgICAgICAgICAgc3lzdGVtNC5jb21wYXJhdG9yIC0+IHN5c3RlbTQucmVzdWx0c0RiICIxMy4gU3RvcmUgY29tcGFyaXNvbiByZXN1bHQiCiAgICAgICAgICAgIHN5c3RlbTUud2ViIC0+IHN5c3RlbTUuYmFja2VuZCAiMTQuIFJlcXVlc3QgcmVwb3J0IgogICAgICAgICAgICBzeXN0ZW01LmJhY2tlbmQgLT4gc3lzdGVtNC5yZXN1bHRzQXBpICIxNS4gRmV0Y2ggcmVzdWx0cyIKICAgICAgICAgICAgYXV0b0xheW91dCBscgogICAgICAgIH0KCiAgICAgICAgc3R5bGVzIHsKICAgICAgICAgICAgZWxlbWVudCAiUGVyc29uIiB7CiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kICIjMEI3Mjg1IgogICAgICAgICAgICAgICAgY29sb3IgIiNmZmZmZmYiCiAgICAgICAgICAgICAgICBzaGFwZSBQZXJzb24KICAgICAgICAgICAgfQogICAgICAgICAgICBlbGVtZW50ICJTb2Z0d2FyZSBTeXN0ZW0iIHsKICAgICAgICAgICAgICAgIGJhY2tncm91bmQgIiMxRDRFODkiCiAgICAgICAgICAgICAgICBjb2xvciAiI2ZmZmZmZiIKICAgICAgICAgICAgfQogICAgICAgICAgICBlbGVtZW50ICJDb250YWluZXIiIHsKICAgICAgICAgICAgICAgIGJhY2tncm91bmQgIiMyQjhBM0UiCiAgICAgICAgICAgICAgICBjb2xvciAiI2ZmZmZmZiIKICAgICAgICAgICAgfQogICAgICAgIH0KICAgIH0KfQ==",
+    "structurizr.inspection.error" : "49",
+    "structurizr.dsl" : "LyoKICogRXhhbXBsZTogTXVsdGktU3lzdGVtIERhdGEgUGlwZWxpbmUgKFN5c3RlbXMgMS01KQogKgogKiBGbG93OgogKiAxKSBVc2VycyBlbnRlciBkZXRhaWxzIGluIFN5c3RlbSAxIGFwcC4KICogMikgU3lzdGVtIDEgc3RvcmVzIGRhdGEgaW4gaXRzIGRhdGFiYXNlLgogKiAzKSBTeXN0ZW0gMSBwdWJsaXNoZXMgZXZlbnRzIHRvIHF1ZXVlcyBjb25zdW1lZCBieSBTeXN0ZW0gMi4KICogNCkgU3lzdGVtIDMgcHVsbHMgc291cmNlIGRhdGEgZnJvbSBTeXN0ZW0gMSBBUEkuCiAqIDUpIFN5c3RlbSAyIHByb2Nlc3Nlcy9lbnJpY2hlcyBkYXRhIGFuZCBzZW5kcyBvdXRwdXQgdG8gU3lzdGVtIDQgdmlhIHF1ZXVlLgogKiA2KSBTeXN0ZW0gMyBwYWNrYWdlcyBzb3VyY2UgZGF0YSBhbmQgc2VuZHMgb3V0cHV0IHRvIFN5c3RlbSA0IHZpYSBxdWV1ZS4KICogNykgU3lzdGVtIDQgY29tcGFyZXMgYm90aCBpbnB1dHMsIGNyZWF0ZXMgb25lIHVuaWZpZWQgZGF0YXNldCwgYW5kIHN0b3JlcyBpdC4KICogOCkgU3lzdGVtIDUgcmVhZHMgdGhlIHVuaWZpZWQgZGF0YXNldCB0aHJvdWdoIFN5c3RlbSA0IEFQSSBmb3Igd2ViIGRpc3BsYXkuCiAqLwoKd29ya3NwYWNlICJTeXN0ZW0gMS01IERhdGEgUGlwZWxpbmUiICJBIHF1ZXVlIGFuZCBBUEkgZHJpdmVuIHBpcGVsaW5lIHdpdGggZW5yaWNobWVudCwgY29tcGFyaXNvbiwgYW5kIHdlYiByZXBvcnRpbmcuIiB7CgogICAgIWlkZW50aWZpZXJzIGhpZXJhcmNoaWNhbAoKICAgIG1vZGVsIHsKCiAgICAgICAgdXNlciA9IHBlcnNvbiAiQnVzaW5lc3MgVXNlciIgIkVudGVycyByZWNvcmRzIGFuZCByZXZpZXdzIGZpbmFsIHJlc3VsdHMgb24gYSB3ZWIgcGFnZS4iICJFeHRlcm5hbCIKCiAgICAgICAgc3lzdGVtMSA9IHNvZnR3YXJlU3lzdGVtICJTeXN0ZW0gMSAtIERhdGEgQ2FwdHVyZSIgIkNhcHR1cmVzIHVzZXItZW50ZXJlZCByZWNvcmRzIGFuZCBleHBvc2VzIHNvdXJjZSBkYXRhIHZpYSBBUEkuIiB7CiAgICAgICAgICAgIGFwcCA9IGNvbnRhaW5lciAiRGF0YSBFbnRyeSBBcHAiICJXZWIgYXBwIHVzZWQgYnkgdXNlcnMgdG8gc3VibWl0IGRldGFpbHMuIiAiUmVhY3QiCiAgICAgICAgICAgIGFwaSA9IGNvbnRhaW5lciAiU3lzdGVtIDEgQVBJIiAiVmFsaWRhdGVzIGlucHV0LCBzdG9yZXMgcmVjb3JkcywgYW5kIHNlcnZlcyBkYXRhIHRvIG90aGVyIHN5c3RlbXMuIiAiTm9kZS5qcyIKICAgICAgICAgICAgZGIgPSBjb250YWluZXIgIlN5c3RlbSAxIERhdGFiYXNlIiAiUHJpbWFyeSBzb3VyY2Utb2YtdHJ1dGggZm9yIHN1Ym1pdHRlZCByZWNvcmRzLiIgIlBvc3RncmVTUUwiCiAgICAgICAgICAgIG91dGJvdW5kUXVldWUgPSBjb250YWluZXIgIk91dGJvdW5kIFF1ZXVlIiAiUHVibGlzaGVzIG5ld2x5IGNyZWF0ZWQgYW5kIHVwZGF0ZWQgcmVjb3Jkcy4iICJBV1MgU1FTIgogICAgICAgIH0KCiAgICAgICAgc3lzdGVtMiA9IHNvZnR3YXJlU3lzdGVtICJTeXN0ZW0gMiAtIEVucmljaG1lbnQgRW5naW5lIiAiQ29uc3VtZXMgcXVldWUgZXZlbnRzLCBhcHBsaWVzIGJ1c2luZXNzIGxvZ2ljLCBhbmQgZW1pdHMgZW5yaWNoZWQgZGF0YS4iIHsKICAgICAgICAgICAgY29uc3VtZXIgPSBjb250YWluZXIgIlF1ZXVlIENvbnN1bWVyIiAiQ29uc3VtZXMgcmVjb3JkIGV2ZW50cyBmcm9tIFN5c3RlbSAxIHF1ZXVlLiIgIlB5dGhvbiIKICAgICAgICAgICAgZW5naW5lID0gY29udGFpbmVyICJQcm9jZXNzaW5nIEVuZ2luZSIgIkFwcGxpZXMgdHJhbnNmb3JtYXRpb25zLCBzY29yaW5nLCBhbmQgZW5yaWNobWVudCBydWxlcy4iICJQeXRob24iCiAgICAgICAgICAgIG91dHB1dFF1ZXVlID0gY29udGFpbmVyICJQcm9jZXNzZWQgUXVldWUiICJRdWV1ZXMgZW5yaWNoZWQgcmVzdWx0cyBmb3IgU3lzdGVtIDQuIiAiQVdTIFNRUyIKICAgICAgICB9CgogICAgICAgIHN5c3RlbTMgPSBzb2Z0d2FyZVN5c3RlbSAiU3lzdGVtIDMgLSBTb3VyY2UgUHVsbCBTZXJ2aWNlIiAiUHVsbHMgc291cmNlIHJlY29yZHMgZnJvbSBTeXN0ZW0gMSBBUEkgYW5kIGZvcndhcmRzIG5vcm1hbGl6ZWQgc291cmNlIHBheWxvYWRzLiIgewogICAgICAgICAgICBwdWxsZXIgPSBjb250YWluZXIgIkFQSSBQdWxsIFdvcmtlciIgIlBlcmlvZGljYWxseSBmZXRjaGVzIHNvdXJjZSByZWNvcmRzIGZyb20gU3lzdGVtIDEgQVBJLiIgIkdvIgogICAgICAgICAgICBzbmFwc2hvdFN0b3JlID0gY29udGFpbmVyICJTbmFwc2hvdCBTdG9yZSIgIlN0b3JlcyBmZXRjaGVkIHNvdXJjZSBzbmFwc2hvdHMuIiAiUG9zdGdyZVNRTCIKICAgICAgICAgICAgcHVibGlzaGVyID0gY29udGFpbmVyICJTb3VyY2UgUHVibGlzaGVyIiAiQnVpbGRzIHNvdXJjZSBwYXlsb2FkIGZpbGVzIGFuZCBwdWJsaXNoZXMgdGhlbSBmb3IgY29tcGFyaXNvbi4iICJHbyIKICAgICAgICAgICAgc291cmNlUXVldWUgPSBjb250YWluZXIgIlNvdXJjZSBRdWV1ZSIgIlF1ZXVlcyBzb3VyY2UgcGF5bG9hZCBmaWxlcyBmb3IgU3lzdGVtIDQuIiAiQVdTIFNRUyIKICAgICAgICB9CgogICAgICAgIHN5c3RlbTQgPSBzb2Z0d2FyZVN5c3RlbSAiU3lzdGVtIDQgLSBDb21wYXJpc29uIEh1YiIgIkNvbnN1bWVzIHR3byBxdWV1ZSBmZWVkcywgY29tcGFyZXMgYm90aCBkYXRhc2V0cywgYW5kIGNyZWF0ZXMgb25lIGZpbmFsIGRhdGFzZXQuIiB7CiAgICAgICAgICAgIGVucmljaGVkSW5nZXN0ID0gY29udGFpbmVyICJFbnJpY2hlZCBJbmdlc3RvciIgIkNvbnN1bWVzIGVucmljaGVkIG91dHB1dCBmaWxlcyBmcm9tIFN5c3RlbSAyIHF1ZXVlLiIgIkphdmEiCiAgICAgICAgICAgIHNvdXJjZUluZ2VzdCA9IGNvbnRhaW5lciAiU291cmNlIEluZ2VzdG9yIiAiQ29uc3VtZXMgc291cmNlIHBheWxvYWQgZmlsZXMgZnJvbSBTeXN0ZW0gMyBxdWV1ZS4iICJKYXZhIgogICAgICAgICAgICBjb21wYXJhdG9yID0gY29udGFpbmVyICJDb21wYXJpc29uIFNlcnZpY2UiICJNYXRjaGVzIGFuZCBjb21wYXJlcyBTeXN0ZW0gMiBhbmQgU3lzdGVtIDMgcGF5bG9hZHMuIiAiSmF2YSIKICAgICAgICAgICAgcmVzdWx0c0RiID0gY29udGFpbmVyICJVbmlmaWVkIERhdGFzZXQgREIiICJTdG9yZXMgb25lIGNvbnNvbGlkYXRlZCBkYXRhc2V0IGFmdGVyIGNvbXBhcmlzb24uIiAiUG9zdGdyZVNRTCIKICAgICAgICAgICAgcmVzdWx0c0FwaSA9IGNvbnRhaW5lciAiUmVzdWx0cyBBUEkiICJTZXJ2ZXMgZmluYWwgY29tcGFyaXNvbiBkYXRhIHRvIFN5c3RlbSA1LiIgIkphdmEiCiAgICAgICAgfQoKICAgICAgICBzeXN0ZW01ID0gc29mdHdhcmVTeXN0ZW0gIlN5c3RlbSA1IC0gV2ViIFJlcG9ydGluZyIgIkRpc3BsYXlzIGNvbXBhcmlzb24gb3V0Y29tZXMgaW4gYSB3ZWIgcGFnZS4iIHsKICAgICAgICAgICAgd2ViID0gY29udGFpbmVyICJSZXBvcnRpbmcgV2ViIEFwcCIgIlByZXNlbnRzIGZpbmFsIG91dGNvbWVzIGFuZCBkcmlsbC1kb3duIGRldGFpbHMuIiAiTmV4dC5qcyIKICAgICAgICAgICAgYmFja2VuZCA9IGNvbnRhaW5lciAiUmVwb3J0aW5nIEJhY2tlbmQiICJGZXRjaGVzIGZpbmFsIHJlc3VsdHMgZnJvbSBTeXN0ZW0gNCBhbmQgc2hhcGVzIFVJIHJlc3BvbnNlcy4iICJOb2RlLmpzIgogICAgICAgIH0KCiAgICAgICAgdXNlciAtPiBzeXN0ZW0xLmFwcCAiRW50ZXJzIGRldGFpbHMiCiAgICAgICAgdXNlciAtPiBzeXN0ZW01LndlYiAiVmlld3MgcHJvY2Vzc2VkIGNvbXBhcmlzb24gcmVzdWx0cyIKCiAgICAgICAgc3lzdGVtMS5hcHAgLT4gc3lzdGVtMS5hcGkgIlN1Ym1pdCBkZXRhaWxzIgogICAgICAgIHN5c3RlbTEuYXBpIC0+IHN5c3RlbTEuZGIgIkNyZWF0ZS91cGRhdGUgcmVjb3JkcyIKICAgICAgICBzeXN0ZW0xLmFwaSAtPiBzeXN0ZW0xLm91dGJvdW5kUXVldWUgIlB1Ymxpc2ggcmVjb3JkLWNyZWF0ZWQvdXBkYXRlZCBldmVudCIKCiAgICAgICAgc3lzdGVtMS5vdXRib3VuZFF1ZXVlIC0+IHN5c3RlbTIuY29uc3VtZXIgIkRlbGl2ZXIgcmVjb3JkIGV2ZW50IgogICAgICAgIHN5c3RlbTIuY29uc3VtZXIgLT4gc3lzdGVtMi5lbmdpbmUgIlBhc3MgcGF5bG9hZCBmb3IgcHJvY2Vzc2luZyIKICAgICAgICBzeXN0ZW0yLmVuZ2luZSAtPiBzeXN0ZW0yLm91dHB1dFF1ZXVlICJQdWJsaXNoIGVucmljaGVkIHJlc3VsdCIKCiAgICAgICAgc3lzdGVtMy5wdWxsZXIgLT4gc3lzdGVtMS5hcGkgIlB1bGwgc291cmNlIHJlY29yZHMgdmlhIEFQSSIKICAgICAgICBzeXN0ZW0zLnB1bGxlciAtPiBzeXN0ZW0zLnNuYXBzaG90U3RvcmUgIlBlcnNpc3QgcHVsbGVkIHNuYXBzaG90cyIKICAgICAgICBzeXN0ZW0zLnB1Ymxpc2hlciAtPiBzeXN0ZW0zLnNuYXBzaG90U3RvcmUgIlJlYWQgc25hcHNob3RzIgogICAgICAgIHN5c3RlbTMucHVibGlzaGVyIC0+IHN5c3RlbTMuc291cmNlUXVldWUgIlB1Ymxpc2ggc291cmNlIHBheWxvYWQgZmlsZSIKCiAgICAgICAgc3lzdGVtMi5vdXRwdXRRdWV1ZSAtPiBzeXN0ZW00LmVucmljaGVkSW5nZXN0ICJEZWxpdmVyIGVucmljaGVkIG91dHB1dCBmaWxlIgogICAgICAgIHN5c3RlbTMuc291cmNlUXVldWUgLT4gc3lzdGVtNC5zb3VyY2VJbmdlc3QgIkRlbGl2ZXIgc291cmNlIHBheWxvYWQgZmlsZSIKICAgICAgICBzeXN0ZW00LmVucmljaGVkSW5nZXN0IC0+IHN5c3RlbTQuY29tcGFyYXRvciAiRm9yd2FyZCBlbnJpY2hlZCBwYXlsb2FkIgogICAgICAgIHN5c3RlbTQuc291cmNlSW5nZXN0IC0+IHN5c3RlbTQuY29tcGFyYXRvciAiRm9yd2FyZCBzb3VyY2UgcGF5bG9hZCIKICAgICAgICBzeXN0ZW00LmNvbXBhcmF0b3IgLT4gc3lzdGVtNC5yZXN1bHRzRGIgIlN0b3JlIHVuaWZpZWQgZGF0YXNldCIKICAgICAgICBzeXN0ZW00LnJlc3VsdHNBcGkgLT4gc3lzdGVtNC5yZXN1bHRzRGIgIlJlYWQgZmluYWwgb3V0Y29tZXMiCgogICAgICAgIHN5c3RlbTUud2ViIC0+IHN5c3RlbTUuYmFja2VuZCAiTG9hZCByZXBvcnQgcGFnZSBkYXRhIgogICAgICAgIHN5c3RlbTUuYmFja2VuZCAtPiBzeXN0ZW00LnJlc3VsdHNBcGkgIkZldGNoIGZpbmFsIGNvbXBhcmlzb24gcmVzdWx0cyIKICAgIH0KCiAgICB2aWV3cyB7CgogICAgICAgIHN5c3RlbUxhbmRzY2FwZSAibGFuZHNjYXBlIiAiU3lzdGVtIDEgdG8gNSBoaWdoLWxldmVsIGFyY2hpdGVjdHVyZSIgewogICAgICAgICAgICBpbmNsdWRlICoKICAgICAgICAgICAgYXV0b0xheW91dCBscgogICAgICAgIH0KCiAgICAgICAgY29udGFpbmVyIHN5c3RlbTEgInN5c3RlbTEtY29udGFpbmVycyIgIlN5c3RlbSAxIGNvbnRhaW5lcnMiIHsKICAgICAgICAgICAgaW5jbHVkZSAqCiAgICAgICAgICAgIGF1dG9MYXlvdXQgbHIKICAgICAgICB9CgogICAgICAgIGR5bmFtaWMgc3lzdGVtNCAiZW5kVG9FbmRGbG93IiAiRW5kLXRvLWVuZCBmbG93IHdpdGggZHVhbCBxdWV1ZSBkZWxpdmVyeSBpbnRvIGNvbXBhcmlzb24iIHsKICAgICAgICAgICAgdXNlciAtPiBzeXN0ZW0xLmFwcCAiMS4gRW50ZXIgZGV0YWlscyIKICAgICAgICAgICAgc3lzdGVtMS5hcHAgLT4gc3lzdGVtMS5hcGkgIjIuIFN1Ym1pdCIKICAgICAgICAgICAgc3lzdGVtMS5hcGkgLT4gc3lzdGVtMS5kYiAiMy4gU2F2ZSBpbiBEQiIKICAgICAgICAgICAgc3lzdGVtMS5hcGkgLT4gc3lzdGVtMS5vdXRib3VuZFF1ZXVlICI0LiBQdWJsaXNoIGV2ZW50IgogICAgICAgICAgICBzeXN0ZW0xLm91dGJvdW5kUXVldWUgLT4gc3lzdGVtMi5jb25zdW1lciAiNS4gUXVldWUgZGVsaXZlcnkiCiAgICAgICAgICAgIHN5c3RlbTIuY29uc3VtZXIgLT4gc3lzdGVtMi5lbmdpbmUgIjYuIFByb2Nlc3MiCiAgICAgICAgICAgIHN5c3RlbTIuZW5naW5lIC0+IHN5c3RlbTIub3V0cHV0UXVldWUgIjcuIFB1Ymxpc2ggZW5yaWNoZWQgZmlsZSIKICAgICAgICAgICAgc3lzdGVtMy5wdWxsZXIgLT4gc3lzdGVtMS5hcGkgIjguIFB1bGwgc291cmNlIGRhdGEgdmlhIEFQSSIKICAgICAgICAgICAgc3lzdGVtMy5wdWxsZXIgLT4gc3lzdGVtMy5zbmFwc2hvdFN0b3JlICI5LiBTdG9yZSBzbmFwc2hvdCIKICAgICAgICAgICAgc3lzdGVtMy5wdWJsaXNoZXIgLT4gc3lzdGVtMy5zbmFwc2hvdFN0b3JlICIxMC4gUmVhZCBzbmFwc2hvdCIKICAgICAgICAgICAgc3lzdGVtMy5wdWJsaXNoZXIgLT4gc3lzdGVtMy5zb3VyY2VRdWV1ZSAiMTEuIFB1Ymxpc2ggc291cmNlIGZpbGUiCiAgICAgICAgICAgIHN5c3RlbTIub3V0cHV0UXVldWUgLT4gc3lzdGVtNC5lbnJpY2hlZEluZ2VzdCAiMTIuIERlbGl2ZXIgZW5yaWNoZWQgZmlsZSIKICAgICAgICAgICAgc3lzdGVtMy5zb3VyY2VRdWV1ZSAtPiBzeXN0ZW00LnNvdXJjZUluZ2VzdCAiMTMuIERlbGl2ZXIgc291cmNlIGZpbGUiCiAgICAgICAgICAgIHN5c3RlbTQuZW5yaWNoZWRJbmdlc3QgLT4gc3lzdGVtNC5jb21wYXJhdG9yICIxNC4gU2VuZCBlbnJpY2hlZCBwYXlsb2FkIgogICAgICAgICAgICBzeXN0ZW00LnNvdXJjZUluZ2VzdCAtPiBzeXN0ZW00LmNvbXBhcmF0b3IgIjE1LiBTZW5kIHNvdXJjZSBwYXlsb2FkIgogICAgICAgICAgICBzeXN0ZW00LmNvbXBhcmF0b3IgLT4gc3lzdGVtNC5yZXN1bHRzRGIgIjE2LiBTYXZlIHVuaWZpZWQgZGF0YXNldCIKICAgICAgICAgICAgc3lzdGVtNS53ZWIgLT4gc3lzdGVtNS5iYWNrZW5kICIxNy4gUmVxdWVzdCByZXBvcnQiCiAgICAgICAgICAgIHN5c3RlbTUuYmFja2VuZCAtPiBzeXN0ZW00LnJlc3VsdHNBcGkgIjE4LiBGZXRjaCB1bmlmaWVkIGRhdGFzZXQiCiAgICAgICAgICAgIGF1dG9MYXlvdXQgbHIKICAgICAgICB9CgogICAgICAgIHN0eWxlcyB7CiAgICAgICAgICAgIGVsZW1lbnQgIlBlcnNvbiIgewogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAiIzBCNzI4NSIKICAgICAgICAgICAgICAgIGNvbG9yICIjZmZmZmZmIgogICAgICAgICAgICAgICAgc2hhcGUgUGVyc29uCiAgICAgICAgICAgIH0KICAgICAgICAgICAgZWxlbWVudCAiU29mdHdhcmUgU3lzdGVtIiB7CiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kICIjMUQ0RTg5IgogICAgICAgICAgICAgICAgY29sb3IgIiNmZmZmZmYiCiAgICAgICAgICAgIH0KICAgICAgICAgICAgZWxlbWVudCAiQ29udGFpbmVyIiB7CiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kICIjMkI4QTNFIgogICAgICAgICAgICAgICAgY29sb3IgIiNmZmZmZmYiCiAgICAgICAgICAgIH0KICAgICAgICB9CiAgICB9Cn0=",
     "structurizr.inspection.info" : "0",
     "structurizr.inspection.ignore" : "0",
     "structurizr.inspection.warning" : "0"
@@ -526,17 +559,17 @@
       "name" : "Container View: System 1 - Data Capture",
       "order" : 2,
       "relationships" : [ {
-        "id" : "23"
-      }, {
-        "id" : "27"
-      }, {
-        "id" : "28"
+        "id" : "25"
       }, {
         "id" : "29"
       }, {
+        "id" : "30"
+      }, {
         "id" : "31"
       }, {
-        "id" : "38"
+        "id" : "33"
+      }, {
+        "id" : "40"
       } ],
       "softwareSystemId" : "2"
     } ],
@@ -548,8 +581,8 @@
         "rankSeparation" : 100,
         "vertices" : true
       },
-      "description" : "End-to-end processing and comparison flow",
-      "elementId" : "15",
+      "description" : "End-to-end flow with dual queue delivery into comparison",
+      "elementId" : "16",
       "elements" : [ {
         "id" : "1",
         "x" : 0,
@@ -595,7 +628,7 @@
         "x" : 0,
         "y" : 0
       }, {
-        "id" : "16",
+        "id" : "15",
         "x" : 0,
         "y" : 0
       }, {
@@ -611,11 +644,19 @@
         "x" : 0,
         "y" : 0
       }, {
+        "id" : "20",
+        "x" : 0,
+        "y" : 0
+      }, {
         "id" : "21",
         "x" : 0,
         "y" : 0
       }, {
-        "id" : "22",
+        "id" : "23",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "24",
         "x" : 0,
         "y" : 0
       } ],
@@ -625,78 +666,93 @@
       "order" : 3,
       "relationships" : [ {
         "description" : "1. Enter details",
-        "id" : "23",
+        "id" : "25",
         "order" : "1",
         "response" : false
       }, {
         "description" : "2. Submit",
-        "id" : "27",
+        "id" : "29",
         "order" : "2",
         "response" : false
       }, {
         "description" : "3. Save in DB",
-        "id" : "28",
+        "id" : "30",
         "order" : "3",
         "response" : false
       }, {
         "description" : "4. Publish event",
-        "id" : "29",
+        "id" : "31",
         "order" : "4",
         "response" : false
       }, {
         "description" : "5. Queue delivery",
-        "id" : "30",
+        "id" : "32",
         "order" : "5",
         "response" : false
       }, {
         "description" : "6. Process",
-        "id" : "34",
+        "id" : "36",
         "order" : "6",
         "response" : false
       }, {
-        "description" : "7. Publish enriched output",
-        "id" : "35",
+        "description" : "7. Publish enriched file",
+        "id" : "37",
         "order" : "7",
         "response" : false
       }, {
         "description" : "8. Pull source data via API",
-        "id" : "36",
+        "id" : "38",
         "order" : "8",
         "response" : false
       }, {
         "description" : "9. Store snapshot",
-        "id" : "40",
+        "id" : "42",
         "order" : "9",
         "response" : false
       }, {
-        "description" : "10. Send to System 4",
-        "id" : "42",
+        "description" : "10. Read snapshot",
+        "id" : "43",
         "order" : "10",
         "response" : false
       }, {
-        "description" : "11. Compare prep",
-        "id" : "46",
+        "description" : "11. Publish source file",
+        "id" : "44",
         "order" : "11",
         "response" : false
       }, {
-        "description" : "12. Pull source snapshot",
-        "id" : "47",
+        "description" : "12. Deliver enriched file",
+        "id" : "45",
         "order" : "12",
         "response" : false
       }, {
-        "description" : "13. Store comparison result",
-        "id" : "51",
+        "description" : "13. Deliver source file",
+        "id" : "49",
         "order" : "13",
         "response" : false
       }, {
-        "description" : "14. Request report",
+        "description" : "14. Send enriched payload",
         "id" : "53",
         "order" : "14",
         "response" : false
       }, {
-        "description" : "15. Fetch results",
+        "description" : "15. Send source payload",
         "id" : "54",
         "order" : "15",
+        "response" : false
+      }, {
+        "description" : "16. Save unified dataset",
+        "id" : "55",
+        "order" : "16",
+        "response" : false
+      }, {
+        "description" : "17. Request report",
+        "id" : "57",
+        "order" : "17",
+        "response" : false
+      }, {
+        "description" : "18. Fetch unified dataset",
+        "id" : "58",
+        "order" : "18",
         "response" : false
       } ]
     } ],
@@ -726,11 +782,11 @@
         "x" : 0,
         "y" : 0
       }, {
-        "id" : "15",
+        "id" : "16",
         "x" : 0,
         "y" : 0
       }, {
-        "id" : "20",
+        "id" : "22",
         "x" : 0,
         "y" : 0
       } ],
@@ -739,19 +795,19 @@
       "name" : "System Landscape View",
       "order" : 1,
       "relationships" : [ {
-        "id" : "24"
-      }, {
         "id" : "26"
       }, {
-        "id" : "33"
+        "id" : "28"
       }, {
-        "id" : "39"
+        "id" : "35"
       }, {
-        "id" : "45"
+        "id" : "41"
       }, {
-        "id" : "50"
+        "id" : "48"
       }, {
-        "id" : "57"
+        "id" : "52"
+      }, {
+        "id" : "61"
       } ]
     } ]
   }
